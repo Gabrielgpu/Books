@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Produtos</title>
+</head>
+<body>
+    <h1>Buscar Produto por ISBN</h1>
+    <form method="POST" action="/buscar">
+        <input type="text" name="isbn" placeholder="Digite o ISBN" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if produtos %}
+        <h2>Informações dos Produtos</h2>
+        <ul>
+            {% for produto in produtos %}
+                <li>
+                    {% if produto.local == "up" %}
+                        <strong style="color: red;">ISBN:</strong> {{ produto.isbn }}<br>
+                        <strong style="color: red;">Número:</strong> {{ produto.numero }}<br>
+                        <strong style="color: red;">Localizacao:</strong> {{ produto.localizacao }}<br>
+                    {% elif produto.local == "down" %}
+                        <strong>ISBN:</strong> {{ produto.isbn }}<br>
+                        <strong>Número:</strong> {{ produto.numero }}<br>
+                        <strong>Localizacao:</strong> {{ produto.localizacao }}<br>
+                    {% endif %}
+                </li>
+                <br>
+            {% endfor %}
+        </ul>
+    {% elif produtos is not none %}
+        <p>Nenhum produto encontrado para o ISBN informado.</p>
+    {% endif %}
+</body>
+</html>

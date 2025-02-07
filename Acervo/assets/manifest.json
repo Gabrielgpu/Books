@@ -1,0 +1,17 @@
+{
+    "name": "Mercalivros App",
+    "short_name": "Merca",
+    "start_url": ".",
+    "icons": [
+        {
+            "src/": "icons/loading-animation.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src/": "icons/loading-animation.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

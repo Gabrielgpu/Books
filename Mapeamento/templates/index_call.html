@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Recebidos</title>
+</head>
+<body>
+    <h1>Produtos Recebidos via Callback</h1>
+
+    {% if produtos %}
+        <ul>
+            {% for produto in produtos %}
+                <li>
+                    <strong>ISBN:</strong> {{ produto.isbn }}<br>
+                    <strong>Número do Pedido:</strong> {{ produto.pedido }}<br>
+                    <strong>Titulo:</strong> {{ produto.titulo }}<br>
+                    <strong>Quantidade:</strong> {{ produto.quantidade }}<br>
+                    <strong>Número:</strong> {{ produto.numero }}<br>
+                    {% if produto.local == "up" %}
+                        <strong style="color: red;">Localizacao:</strong> {{ produto.localizacao }}<br>
+                    {% elif produto.local == "down" %}
+                        <strong>Localizacao:</strong> {{ produto.localizacao }}<br>
+                    {% endif %}
+                </li>
+                <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum produto recebido ainda.</p>
+    {% endif %}
+
+    <a href="/">Voltar</a>
+</body>
+</html>
