@@ -22,6 +22,10 @@ Responsável pela geração de códigos de barras e integração com impressoras
 
 Sistema de envio via e-mail. Permite a verificação automática de produtos na lista de vendas recebida via callback, possibilitando a integração com o checkout e reduzindo erros no processo de envio.
 
+## Gestão de sequencia dos Produtos
+
+Ao remover um produto, o sistema armazena sua numeração e prioriza esse número ao registrar um novo produto. Dessa forma, a sequência numérica é mantida sem buracos, garantindo uma organização eficiente do estoque.
+
 ## Telas do Sistema
 
 ### Tela de Entrada de Dados
@@ -29,5 +33,4 @@ Sistema de envio via e-mail. Permite a verificação automática de produtos na 
 
 ### Tela de Saída de Dados
 ![Tela de Saída](assets/tela_saida.png)
-
 
